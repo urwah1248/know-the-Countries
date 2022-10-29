@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
-import WeatherData from '../assets/weather.json'
+import WeatherData from '../assets/weather.json'  
 
 
 export default function WeatherInfo({country}) {
@@ -9,7 +9,7 @@ export default function WeatherInfo({country}) {
     const [weather, setWeather] = useState(WeatherData)
     useEffect(() => {
     axios
-        .get(`https://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=api_key`)
+        .get(`https://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=${api_key}`)
         .then(response => {
         setWeather(response.data)
     })
