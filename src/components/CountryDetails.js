@@ -5,7 +5,7 @@ export default function CountryDetails({ country }) {
   return (
     <div className='px-4'>
         <h1 className='text-center w-full py-10'>{country.name}</h1>
-        <div className='flex flex-row gap-3 justify-between'>
+        <div className='flex flex-col sm:flex-row gap-3 justify-between mb-4'>
           <div className="left">
             <div className="col-sm left">
               <h1>Key Details</h1>
