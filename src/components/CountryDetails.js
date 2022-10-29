@@ -18,13 +18,14 @@ export default function CountryDetails({ country }) {
                 </ul> 
             </div>
             <br />
-            <h1>Weather in {country.capital}, {country.name}</h1>
-            <WeatherInfo country={country} />
           </div>
           <div className="right ">
             <img className='border-2 border-white' src={country.flags.png} alt={'flag of '+ country.name} />
           </div>
         </div>
+        
+        <h1>Weather in {country.capital}, {country.name}</h1>
+            <WeatherInfo country={country} />
         
     </div>
   )

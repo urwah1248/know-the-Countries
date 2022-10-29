@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import WeatherData from '../assets/weather.json'  
 
+const api_key = process.env.REACT_APP_API_KEY;
 
 export default function WeatherInfo({country}) {
-    const api_key = process.env.REACT_APP_API_KEY;
+
+    console.log(api_key);
 
     const [weather, setWeather] = useState(WeatherData)
     useEffect(() => {
