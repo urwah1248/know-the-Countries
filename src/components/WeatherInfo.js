@@ -4,12 +4,12 @@ import WeatherData from '../assets/weather.json'
 
 
 export default function WeatherInfo({country}) {
-    // const api_key = process.env.REACT_APP_API_KEY;
+    const api_key = process.env.REACT_APP_API_KEY;
 
     const [weather, setWeather] = useState(WeatherData)
     useEffect(() => {
     axios
-        .get(`https://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=fac621fb6e8e4a7d426c8ff30949e1f5`)
+        .get(`https://api.openweathermap.org/data/2.5/weather?q=${country.capital},${country.name}&appid=api_key`)
         .then(response => {
         setWeather(response.data)
     })
