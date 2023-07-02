@@ -18,16 +18,17 @@ function Main({countries, setCountries}) {
 
 
   return (
-    <div className="App py-4 text-white md:w-[700px] w-[95%] mx-auto">
+    <div className="App py-4 text-white md:w-[700px] w-[95%] mx-auto px-4">
 
-      <div className="header text-center bg-[rgba(0,0,0,0.5)] rounded-md mb-4 py-4">
+      <div className="header text-center bg-[rgba(0,0,0,0.5)] rounded-md mb-4 py-4 border-2 border-blue-400">
         <h1 className='text-3xl'>Know the Countries</h1>
         <h2 className='md:text-2xl text-xl'>Basic Information about all the countries</h2>
       </div>
 
-      <div className="main-app mx-auto bg-[rgba(0,0,0,0.5)] backdrop-blur-lg rounded-lg p-4">
+      <div className="main-app mx-auto bg-[rgba(0,0,0,0.5)] backdrop-blur-lg rounded-lg p-4 border-2 border-blue-400">
         <p className='mx-auto block'>Find Country
-        <Input placeholder='e.g Pakistan' className="w-full border-2 text-black indent-4" value={query} onChange={handleChange}/></p>
+          <Input placeholder='e.g Pakistan' className="w-full border-2 text-black" value={query} onChange={handleChange}/>
+        </p>
         {
           query && filteredCountries.length > 10 && (<div>Too many Results</div>)
         }
