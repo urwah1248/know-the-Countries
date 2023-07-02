@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import CountryDetails from './CountryDetails';
 import { Input, Button } from 'antd';
+import Footer from './Footer';
 
 function Main({countries, setCountries}) {
   
@@ -48,6 +49,7 @@ function Main({countries, setCountries}) {
           )
         }
       </div>
+      <Footer/>
     </div>
       
   );
