@@ -20,7 +20,7 @@ function Main({countries, setCountries}) {
   return (
     <div className="App py-4 text-white md:w-[700px] w-[95%] mx-auto px-4">
 
-      <div className="header text-center bg-[rgba(0,0,0,0.5)] rounded-md mb-4 py-4 border-2 border-blue-400">
+      <div className="header text-center bg-[rgba(0,0,0,0.5)] rounded-lg mb-4 py-4 border-2 border-blue-400">
         <h1 className='text-3xl'>Know the Countries</h1>
         <h2 className='md:text-2xl text-xl'>Basic Information about all the countries</h2>
       </div>
