@@ -11,7 +11,7 @@ module.exports = {
         '3xl': '0 35px 35px rgba(255, 255, 255, 0.25)'
       },
       fontFamily: {
-        helvetica: ["Helvetica Neue", "cursive"],
+        helvetica: ["Roboto", "Helvetica neue", "sans-serif"],
       }
     },
   },

@@ -10,8 +10,6 @@ export default function App() {
 
   const [countries, setCountries] = useState([])
 
-
-
   useEffect(() => {
     axios
       .get('https://restcountries.com/v3.1/all')
@@ -27,11 +25,13 @@ export default function App() {
       })
   }, [])
 
+  
+
   return (
     <BrowserRouter>
       <Routes>
         <Route exact path='/' element={<Main countries={countries} setCountries={setCountries} />} />
-        <Route path='/country/:id' element={<CountryPage countries={countries} />} />
+        <Route path='/country/:id' element={<CountryPage countries={countries}/>} />
       </Routes>
     </BrowserRouter>
   )

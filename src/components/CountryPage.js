@@ -1,29 +1,48 @@
-import React from 'react'
-import { useParams, Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { Button } from 'antd';
+import axios from 'axios';
+
 import CountryDetails from './CountryDetails';
 
+export default function CountryPage() {
+  const { id } = useParams();
+  const [country, setCountry] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
-export default function CountryPage({countries}) {
-    const {id} = useParams();
+  useEffect(() => {
+    axios
+      .get(`https://restcountries.com/v3.1/alpha/${id}`)
+      .then(response => {
+        const { name, capital, area, languages, flags, cca2 } = response.data[0];
+        const countryData = { name: name.common, capital, area, languages, flags, cca2 };
+        setCountry(countryData);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.log('Error fetching country data:', error);
+        setError(true);
+        setLoading(false);
+      });
+  }, [id]);
 
-    console.log(id);
-    console.log(countries.filter(country => country.cca2 === id));
-    console.log(countries);
+  if (loading) {
+    return <div className='text-center py-10'>Loading...</div>;
+  }
 
-    const theCountry = countries.filter(country => country.cca2 === id)[0]
-    console.log(theCountry);
+  if (error) {
+    return <div>Error occurred while fetching country data.</div>;
+  }
 
   return (
-    <div className='pt-4 text-white md:w-1/2 w-[80%] mx-auto'>
-        <Link to='/' className=''>
-            <button className='hover:underline'>Back to Search</button> 
-        </Link>
-        <div className="main-app mx-auto bg-[rgba(0,0,0,0.5)] backdrop-blur-lg rounded-md p-4">
-          <CountryDetails country={theCountry} className=""/>
-        </div>
-
-        
-
+    <div className='pt-4 text-white md:w-[700px] w-[95%] mx-auto '>
+      <Link to='/'>
+        <Button type="primary" className='hover:underline bg-blue-700 mb-2'>Back to Search</Button>
+      </Link>
+      <div className="main-app mx-auto bg-[rgba(0,0,0,0.5)] backdrop-blur-lg rounded-md p-4">
+        {country && <CountryDetails country={country} />}
+      </div>
     </div>
-  )
+  );
 }

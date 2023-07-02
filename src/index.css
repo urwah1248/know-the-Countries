@@ -6,6 +6,9 @@
   font-family: "Helvetica Neue";
   src: url("http://fonts.cdnfonts.com/css/helvetica-neue-9");
 }
+body {
+  font-family: 'Roboto', sans-serif;
+}
 
 @layer base {
     h1 {
@@ -17,4 +20,4 @@
     h3 {
       @apply text-lg;
     }
-  } 
+  }

@@ -4,9 +4,9 @@ import WeatherInfo from './WeatherInfo'
 export default function CountryDetails({ country }) {
   return (
     <div className='px-4'>
-        <h1 className='text-center w-full py-10'>{country.name}</h1>
+        <h1 className='bg-[rgba(0,0,0,0.5)] text-center w-full my-3 md:mt-10 py-4 border-2 rounded-lg'>{country.name}</h1>
         <div className='flex flex-col sm:flex-row gap-3 justify-between mb-4'>
-          <div className="left">
+          <div className="bg-[rgba(0,0,0,0.5)] left border-2 rounded-lg p-4 flex-grow ">
             <div className="col-sm left">
               <h1>Key Details</h1>
               <div><strong>Capital City: </strong> {country.capital}</div>
@@ -14,19 +14,19 @@ export default function CountryDetails({ country }) {
             </div>
             <div><h3><strong>Languages:</strong> </h3>
                 <ul className='list-disc list-inside'>
-                {Object.values(country.languages).map(lang => <li key={lang}>{lang}</li>)}
+                  {Object.values(country.languages).map(lang => <li key={lang}>{lang}</li>)}
                 </ul> 
             </div>
-            <br />
           </div>
-          <div className="right ">
-            <img className='border-2 border-white' src={country.flags.png} alt={'flag of '+ country.name} />
+          <div className="right">
+            <img className=' bg-[rgba(0,0,0,0.5)] border-2 rounded-lg w-full md:w-auto mx-auto border-white' src={country.flags.png} alt={'flag of '+ country.name} />
           </div>
         </div>
         
-        <h1>Weather in {country.capital}, {country.name}</h1>
-            <WeatherInfo country={country} />
-        
+        <div className="border-2 p-4 rounded-lg bg-[rgba(0,0,0,0.5)]">
+          <h1>Weather in {country.capital}, {country.name}</h1>
+          <WeatherInfo country={country} />
+        </div>
     </div>
   )
 }
