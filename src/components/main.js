@@ -26,11 +26,11 @@ function Main({countries, setCountries}) {
       </div>
 
       <div className="main-app mx-auto bg-[rgba(0,0,0,0.5)] backdrop-blur-lg rounded-lg p-4 border-2 border-blue-400">
-        <p className='mx-auto block'>Find Country
+        <p className='mx-auto block mb-3'>Find Country
           <Input placeholder='e.g Pakistan' className="w-full border-2 text-black" value={query} onChange={handleChange}/>
         </p>
         {
-          query && filteredCountries.length > 10 && (<div>Too many Results</div>)
+          query && filteredCountries.length > 10 && (<div className='text-center'>Too many Results</div>)
         }
         {
           filteredCountries.length <= 10 && filteredCountries.length > 1 && filteredCountries.map(country => 

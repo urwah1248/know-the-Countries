@@ -6,7 +6,7 @@ import 'typeface-roboto';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <div className="min-h-screen bg-[url('https://cdn.wallpapersafari.com/16/15/TOckVt.jpg')]">
+  <div className="min-h-screen bg-center bg-fixed bg-[url('https://cdn.wallpapersafari.com/16/15/TOckVt.jpg')]">
     <App />
   </div>
 );

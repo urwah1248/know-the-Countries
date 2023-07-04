@@ -4,7 +4,7 @@ import WeatherInfo from './WeatherInfo'
 export default function CountryDetails({ country }) {
   return (
     <div className=''>
-        <h1 className='bg-[rgba(0,0,0,0.5)] text-center w-full my-3 md:mt-10 py-4 border-2 border-blue-400 rounded-lg'>{country.name}</h1>
+        <h1 className='bg-[rgba(0,0,0,0.5)] text-center w-full mb-3 mt-0 py-4 border-2 border-blue-400 rounded-lg'>{country.name}</h1>
         <div className='flex flex-col sm:flex-row gap-3 justify-between mb-4'>
           <div className="bg-[rgba(0,0,0,0.5)] left border-2 border-blue-400 rounded-lg p-4 flex-grow ">
             <div className="col-sm left">

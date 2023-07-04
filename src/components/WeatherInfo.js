@@ -32,8 +32,8 @@ export default function WeatherInfo({ country }) {
   }
 
   return (
-    <div className='flex mt-3 items-center'>
-      <div className='flex-grow'>
+    <div className='flex mt-3 items-center gap-3'>
+      <div className='flex-grow border-2 border-blue-400 rounded-lg p-3 h-28 flex flex-col justify-center gap-3'>
         <div>
           <strong>Temperature</strong> {(weather.main.temp - 273).toFixed(1)} C
         </div>
@@ -41,11 +41,13 @@ export default function WeatherInfo({ country }) {
           <strong>Wind</strong> {weather.wind.speed} m/s
         </div>
       </div>
-      <img
-        src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
-        alt="weather state"
-        className="drop-shadow-3xl"
-      />
+      <div className="bg-sky-400 rounded-lg p-3 h-28">
+        <img
+          src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+          alt="weather state"
+          className="drop-shadow-3xl"
+        />
+      </div>
     </div>
   );
 }
